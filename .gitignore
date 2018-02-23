@@ -49,3 +49,8 @@ hs_err_pid*
 
 # OS X
 .DS_Store
+
+.mvn
+target
+out
+payments-list.json

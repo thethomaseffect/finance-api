@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component inherit-compiler-output="true" inheritJdk="true">
+	<output-test url="file://$MODULE_DIR$/../../../out/test/main1"/>
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$"/>
+	<levels>
+		<level name="maven-wrapper1" value="project"/>
+		<level name="gradle-wrapper" value="project"/>
+	</levels>
+</component>
