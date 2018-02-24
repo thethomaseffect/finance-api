@@ -57,7 +57,6 @@ public class PaymentTests {
     public void shouldReturn200WhenSendingRequestToManagementEndpoint() {
         org.springframework.http.ResponseEntity<java.util.Map> entity = this.testRestTemplate.getForEntity(
                 "http://localhost:" + this.mgt + "/info", java.util.Map.class);
-    System.out.print("http://localhost:" + this.mgt + "/info");
         then(entity.getStatusCode()).isEqualTo(org.springframework.http.HttpStatus.OK);
     }
 

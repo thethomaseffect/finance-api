@@ -3,17 +3,23 @@ package financeapi.models;
 import java.util.List;
 
 public class PaymentsModel_Impl implements PaymentsModel {
-    @Override
-    public List<DataEntryModel> getData() {
-        return null;
+
+    private List<DataEntryModel> data;
+    private LinksModel links;
+
+    public PaymentsModel_Impl(List<DataEntryModel> data, LinksModel links) {
+        this.data = data;
+        this.links = links;
     }
 
-    public PaymentsModel_Impl() {
+    @Override
+    public List<DataEntryModel> getData() {
+        return data;
     }
 
     @Override
 
     public LinksModel getLinks() {
-        return null;
+        return links;
     }
 }

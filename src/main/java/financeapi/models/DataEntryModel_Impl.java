@@ -9,7 +9,8 @@ public class DataEntryModel_Impl implements DataEntryModel {
     String organisationID;
     DataEntryAttributesModel attributes;
 
-    public DataEntryModel_Impl(DataEntryTypes dataEntryType, String id, Integer version, String organisationID, DataEntryAttributesModel attributes) {
+    public DataEntryModel_Impl(DataEntryTypes dataEntryType, String id, Integer version, String organisationID,
+                               DataEntryAttributesModel attributes) {
         this.dataEntryType = dataEntryType;
         this.id = id;
         this.version = version;

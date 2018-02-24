@@ -17,5 +17,5 @@ public interface PaymentAttributesModel extends DataEntryAttributesModel {
     String getReference();
     String getSchemePaymentSubType();
     String getSchemePaymentType();
-    SponsorPartyModel getSponserParty();
+    SponsorPartyModel getSponsorParty();
 }
