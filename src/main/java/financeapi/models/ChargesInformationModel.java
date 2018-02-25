@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface ChargesInformationModel {
     String getBearerCode();
-    List<ChargeModel> getSenderCharges();
+    List<ChargeModel_Impl> getSenderCharges();
     String getReceiverChargesAmount();
     String getReceiverChargesCurrency();
 }

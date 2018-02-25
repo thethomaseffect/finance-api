@@ -48,7 +48,7 @@ public class PaymentTests {
     @Test
     public void shouldReturn200WhenSendingRequestToController() {
         ResponseEntity<Map> entity = this.testRestTemplate.getForEntity(
-                "http://localhost:" + this.port + "/others", Map.class);
+                "http://localhost:" + this.port + "/v1/others", Map.class);
 
         then(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
     }

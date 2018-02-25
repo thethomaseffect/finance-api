@@ -1,31 +1,58 @@
 package financeapi.models;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
+@Embeddable
 public class PaymentAttributesModel_Impl implements PaymentAttributesModel {
 
+    @NotNull
     private String amount;
-    private BeneficiaryPartyModel beneficiaryParty;
-    private ChargesInformationModel chargesInformation;
+    @Embedded
+    @NotNull
+    private BeneficiaryPartyModel_Impl beneficiaryParty;
+    @Embedded
+    @NotNull
+    private ChargesInformationModel_Impl chargesInformation;
+    @NotNull
     private String currency;
-    private DebtorPartyModel debtorParty;
+    @Embedded
+    @NotNull
+    private DebtorPartyModel_Impl debtorParty;
+    @NotNull
     private String endToEndReference;
-    private ForeignExchangeModel foreignExchange;
+    @Embedded
+    @NotNull
+    private ForeignExchangeModel_Impl foreignExchange;
+    @NotNull
     private String numericReference;
+    @NotNull
     private String paymentID;
+    @NotNull
     private String paymentPurpose;
+    @NotNull
     private String paymentScheme;
+    @NotNull
     private String paymentType;
+    @NotNull
     private String processingDate;
+    @NotNull
     private String reference;
+    @NotNull
     private String schemePaymentSubType;
+    @NotNull
     private String schemePaymentType;
-    private SponsorPartyModel sponsorParty;
+    @Embedded
+    @NotNull
+    private SponsorPartyModel_Impl sponsorParty;
 
-    public PaymentAttributesModel_Impl(String amount, BeneficiaryPartyModel beneficiaryParty, ChargesInformationModel
-            chargesInformation, String currency, DebtorPartyModel debtorParty, String endToEndReference,
-                                       ForeignExchangeModel foreignExchange, String numericReference, String
+    public PaymentAttributesModel_Impl(String amount, BeneficiaryPartyModel_Impl beneficiaryParty,
+                                       ChargesInformationModel_Impl
+            chargesInformation, String currency, DebtorPartyModel_Impl debtorParty, String endToEndReference,
+                                       ForeignExchangeModel_Impl foreignExchange, String numericReference, String
                                                paymentID, String paymentPurpose, String paymentScheme, String
                                                paymentType, String processingDate, String reference, String
-                                               schemePaymentSubType, String schemePaymentType, SponsorPartyModel
+                                               schemePaymentSubType, String schemePaymentType, SponsorPartyModel_Impl
                                                sponsorParty) {
         this.amount = amount;
         this.beneficiaryParty = beneficiaryParty;
@@ -44,6 +71,9 @@ public class PaymentAttributesModel_Impl implements PaymentAttributesModel {
         this.schemePaymentSubType = schemePaymentSubType;
         this.schemePaymentType = schemePaymentType;
         this.sponsorParty = sponsorParty;
+    }
+
+    public PaymentAttributesModel_Impl() {
     }
 
     @Override

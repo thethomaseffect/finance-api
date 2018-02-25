@@ -1,23 +1,38 @@
 package financeapi.models;
 
-import financeapi.enums.AccountTypes;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.validation.constraints.NotNull;
 
+@Embeddable
 public class DebtorPartyModel_Impl implements DebtorPartyModel {
 
+    @NotNull
+    @Column(name = "debtor_account_name")
     private String accountName;
+    @NotNull
+    @Column(name = "debtor_account_number_code")
     private String accountNumberCode;
-    private AccountTypes accountType;
+    @NotNull
+    @Column(name = "debtor_address")
     private String address;
+    @NotNull
+    @Column(name = "debtor_name")
     private String name;
+    @NotNull
+    @Column(name = "debtor_account_number")
     private String accountNumber;
+    @NotNull
+    @Column(name = "debtor_bank_id")
     private String bankID;
+    @NotNull
+    @Column(name = "debtor_bank_id_code")
     private String bankIDCode;
 
-    public DebtorPartyModel_Impl(String accountName, String accountNumberCode, AccountTypes accountType, String
+    public DebtorPartyModel_Impl(String accountName, String accountNumberCode, String
             address, String name, String accountNumber, String bankID, String bankIDCode) {
         this.accountName = accountName;
         this.accountNumberCode = accountNumberCode;
-        this.accountType = accountType;
         this.address = address;
         this.name = name;
         this.accountNumber = accountNumber;
@@ -25,6 +40,8 @@ public class DebtorPartyModel_Impl implements DebtorPartyModel {
         this.bankIDCode = bankIDCode;
     }
 
+    public DebtorPartyModel_Impl() {
+    }
 
     @Override
     public String getAccountName() {
@@ -34,11 +51,6 @@ public class DebtorPartyModel_Impl implements DebtorPartyModel {
     @Override
     public String getAccountNumberCode() {
         return accountNumberCode;
-    }
-
-    @Override
-    public AccountTypes getAccountType() {
-        return accountType;
     }
 
     @Override

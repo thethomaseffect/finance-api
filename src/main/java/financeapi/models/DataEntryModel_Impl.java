@@ -1,16 +1,29 @@
 package financeapi.models;
 
 import financeapi.enums.DataEntryTypes;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
+@Entity
 public class DataEntryModel_Impl implements DataEntryModel {
+    @NotNull
+    @Enumerated(EnumType.STRING)
     DataEntryTypes dataEntryType;
+    @Id
     String id;
+    @NotNull
     Integer version;
+    @NotNull
     String organisationID;
-    DataEntryAttributesModel attributes;
+    @NotNull
+    @Embedded
+    PaymentAttributesModel_Impl attributes;
 
+    @Autowired
     public DataEntryModel_Impl(DataEntryTypes dataEntryType, String id, Integer version, String organisationID,
-                               DataEntryAttributesModel attributes) {
+                               PaymentAttributesModel_Impl attributes) {
         this.dataEntryType = dataEntryType;
         this.id = id;
         this.version = version;
@@ -18,6 +31,8 @@ public class DataEntryModel_Impl implements DataEntryModel {
         this.attributes = attributes;
     }
 
+    public DataEntryModel_Impl() {
+    }
 
     @Override
     public DataEntryTypes getType() {
@@ -40,7 +55,7 @@ public class DataEntryModel_Impl implements DataEntryModel {
     }
 
     @Override
-    public DataEntryAttributesModel getAttributes() {
+    public PaymentAttributesModel getAttributes() {
         return attributes;
     }
 }
